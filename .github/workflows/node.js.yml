@@ -24,6 +24,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - name: Install pm2
+      run: npm install -g pm2
+        
     - run: npm i
     - run: npm run build
     - run: pm2 restart 
